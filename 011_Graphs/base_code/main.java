@@ -10,22 +10,19 @@ public class Main {
     public static void main(String[] args) {
         SocialNetworkGraph graph = new SocialNetworkGraph();
 
-        // Populate the graph with names from the file
         List<String> names = readNamesFromFile("C:\\Users\\natha\\reactWebsite\\Poole Labs\\Super_Poole24\\011_Graphs\\base_code\\pkg\\names.txt");
         for (String name : names) {
             graph.addPerson(name);
         }
 
-        // Establish random follow relationships
         for (String name : names) {
-            int numFollows = (int) (Math.random() * 500); // Random number of follows (up to 500)
+            int numFollows = (int) (Math.random() * 500);
             for (int i = 0; i < numFollows; i++) {
                 String followedName = names.get((int) (Math.random() * names.size()));
                 graph.addFollowRelationship(name, followedName);
             }
         }
 
-        // Taking user input to view relationships
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a name to see the relationships: ");
         String inputName = scanner.nextLine();
