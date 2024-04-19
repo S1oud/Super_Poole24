@@ -1,14 +1,18 @@
 import pkg.*;
-import java.util.*;
-import java.time.*;
-import java.lang.*;
 
-class main {
-	public static void main(String args[]) {
-		/*
-			Create a Binary Search Tree.
-			Insert 20 elements of random values between 1-100 into the tree.
-			Print the tree, make sure it prints in order.
-		*/
-	}
+public class main {
+    public static void main(String args[]) {
+        BinarySearchTree bst = new BinarySearchTree();
+
+        // Insert 20 random elements into the tree
+        for (int i = 0; i < 20; i++) {
+            int value = (int) (Math.random() * 100) + 1; // Generates random value between 1 and 100
+            bst.insert(value);
+        }
+
+        // Print the tree in ascending order
+        System.out.println("Tree in ascending order:");
+        bst.printTree();
+    }
 }
+
